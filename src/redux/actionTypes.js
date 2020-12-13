@@ -1,0 +1,6 @@
+export const FETCH_CONTACTS = 'FETCH_CONTACTS';
+export const ADD_CONTACT = 'ADD_CONTACT';
+export const DELETE_CONTACT = 'DELETE_CONTACT';
+
+export const INPUT_FILTER = 'INPUT_FILTER';
+export const FILTER_CONTACTS = 'FILTER_CONTACTS';

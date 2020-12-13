@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 200px;
+  height: 40px;
+  align-content: center;
+  background-color: rgb(179, 71, 71);
+  border: none;
+  border-radius: 5px;
+}
+
+.text {
+  margin: 0 auto;
+  padding: 0;
+  color: #fff;
+}
