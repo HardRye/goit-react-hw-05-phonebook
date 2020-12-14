@@ -59,6 +59,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "homepage": "https://hardrye.github.io/goit-react-hw-05-phonebook/"
+  }
 }
