@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Header from './Header/Header';
-// import ContactForm from './ContactForm/ContactForm';
-// import Filter from './Filter/Filter';
-// import ContactList from './ContactList/ContactList';
-// import Alert from './Alert/Alert';
+import ContactForm from './ContactForm/ContactForm';
+import Filter from './Filter/Filter';
+import ContactList from './ContactList/ContactList';
+import Alert from './Alert/Alert';
 
 import * as phonebookActions from '../redux/phonebookActions';
 // import contacts from '../assets/contacts.json';
@@ -14,36 +14,40 @@ import * as phonebookActions from '../redux/phonebookActions';
 import css from './App.module.css';
 import slideTransitions from '../transitions/slideTitle.module.css';
 
+const contacts = [
+  { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+  { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+  { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+  { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+];
+
 class App extends Component {
-  // static propTypes = {
-  //   fetchContacts: PropTypes.func.isRequired,
-  // };
+  static propTypes = {
+    fetchContacts: PropTypes.func.isRequired,
+  };
 
   state = {
     isLoaded: false,
-    // isAlert: false,
+    isAlert: false,
   };
 
-  // componentDidMount() {
-  //   const { isLoaded } = this.state;
-  //   this.setState({ isLoaded: !isLoaded });
-  //   const { fetchContacts } = this.props;
+  componentDidMount() {
+    const { isLoaded } = this.state;
+    this.setState({ isLoaded: !isLoaded });
+    const { fetchContacts } = this.props;
 
-  //   if (contacts) {
-  //     fetchContacts(contacts);
-  //   }
-  // }
+    if (contacts) {
+      fetchContacts(contacts);
+    }
+  }
 
-  // handleAlert = () => {
-  //   this.setState({ isAlert: true });
-  //   setTimeout(() => this.setState({ isAlert: false }), 2000);
-  // };
+  handleAlert = () => {
+    this.setState({ isAlert: true });
+    setTimeout(() => this.setState({ isAlert: false }), 2000);
+  };
 
   render() {
-    const {
-      isLoaded,
-      // , isAlert
-    } = this.state;
+    const { isLoaded, isAlert } = this.state;
 
     return (
       <div className={css.container}>
@@ -56,10 +60,10 @@ class App extends Component {
           <Header />
         </CSSTransition>
 
-        {/* <ContactForm handleAlert={this.handleAlert} />
+        <ContactForm handleAlert={this.handleAlert} />
         <Filter />
         <ContactList />
-        <Alert isAlert={isAlert} /> */}
+        <Alert isAlert={isAlert} />
       </div>
     );
   }
