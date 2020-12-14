@@ -28,7 +28,10 @@ class App extends Component {
     const { isLoaded } = this.state;
     this.setState({ isLoaded: !isLoaded });
     const { fetchContacts } = this.props;
-    fetchContacts(contacts);
+
+    if (contacts) {
+      fetchContacts(contacts);
+    }
   }
 
   handleAlert = () => {
