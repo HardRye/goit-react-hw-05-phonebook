@@ -11,7 +11,7 @@ import slideTransitions from '../../transitions/slideList.module.css';
 
 const ContactList = ({ contacts, deleteContact }) => {
   return (
-    <TransitionGroup component="ul" className={css.list} c>
+    <TransitionGroup component="ul" className={css.list}>
       {contacts.map(contact => (
         <CSSTransition
           key={contact.id}

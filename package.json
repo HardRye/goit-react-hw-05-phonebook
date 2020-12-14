@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0",
     "gh-pages": "^2.2.0",
     "notyf-js": "^2.1.2",
     "react": "^16.13.1",
